@@ -60,6 +60,9 @@ public class Calculations {
 	
 	public static String subtraction(String num1, String num2) {
 		
+		String sum = "";
+		StringBuilder stringBuilder = new StringBuilder(sum);
+		
 		//Get the length of the strings
 		int length1 = num1.length();
 		int length2 = num2.length();
@@ -73,5 +76,36 @@ public class Calculations {
 			num2 = expandString(num2, (length1-length2));
 		}
 		
+		//Used if you need to load from the number to the left
+		int loan = 0;
+		
+		//Loop through all the numbers from right to left
+		for (int i = length1-1; i >= 0; i--) {
+			int char1 = Character.getNumericValue(num1.charAt(i));
+			int char2 = Character.getNumericValue(num2.charAt(i));
+			
+			//Initialize the output to 0
+			int output = 0;
+			
+			//Check if the char1 is smaller than char2 and loan from the number to the left
+			if(char1 < char2) {
+				output = (10 + char1) - char2 - loan;
+				loan = 1;
+			}
+			//If char1 is 0 and was loaned before, reset the loan
+			else if(char1 == 0 && loan == 1) {
+				output = (10 + char1) - char2 - loan;
+				loan = 0;
+			}
+			//If not loaned before calculate the output and set loan to 0
+			else {
+				output = char1 - loan - char2;
+				loan = 0;
+			}
+			
+			//Add the output into the string
+			stringBuilder.insert(0, output);
+		}
+		return stringBuilder.toString();
 	}
 }
