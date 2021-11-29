@@ -26,7 +26,7 @@ public class Calculations {
 			stringBuilder.insert(0, "0");
 		}
 		
-		return string;
+		return stringBuilder.toString();
 	}
 	
 	public static String subtraction(String num1, String num2) {
