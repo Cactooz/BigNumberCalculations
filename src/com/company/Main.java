@@ -11,6 +11,9 @@ public class Main {
 		String number2 = input.next();
 		
 		String sum = Calculations.addition(number1, number2);
-		String difference = Calculations.addition(number1, number2);
+		String difference = Calculations.subtraction(number1, number2);
+		
+		System.out.println(sum);
+		System.out.println(difference);
     }
 }
