@@ -9,5 +9,8 @@ public class Main {
 		System.out.println("Skriv in två tal");
 		String number1 = input.next();
 		String number2 = input.next();
+		
+		String sum = Calculations.addition(number1, number2);
+		String difference = Calculations.addition(number1, number2);
     }
 }
