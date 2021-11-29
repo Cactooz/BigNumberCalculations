@@ -26,7 +26,10 @@ public class Calculations {
 			int char1 = Character.getNumericValue(num1.charAt(i-1));
 			int char2 = Character.getNumericValue(num2.charAt(i-1));
 			
+			//Add the two chars and the overflow together
 			int output = char1 + char2 + overflow;
+			
+			//Check if the int is larger than 10 if overflow is needed or not
 			if(output >= 10) {
 				output = output % 10;
 				overflow = 1;
@@ -35,9 +38,11 @@ public class Calculations {
 				overflow = 0;
 			}
 			
+			//Add the output into the string
 			stringBuilder.insert(0, output);
 		}
 		
+		//Return the string made with the stringBuilder
 		return stringBuilder.toString();
 	}
 	
