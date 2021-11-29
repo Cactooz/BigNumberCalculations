@@ -10,6 +10,7 @@ public class Calculations {
 		//Check if a number is shorter than the other
 		if(length1 < length2) {
 			num1 = expandString(num1, (length2-length1));
+			length1 = num1.length();
 		}
 		else if(length1 > length2) {
 			num2 = expandString(num2, (length1-length2));
