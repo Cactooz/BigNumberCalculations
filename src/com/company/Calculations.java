@@ -15,6 +15,11 @@ public class Calculations {
 			num2 = expandString(num2, (length1-length2));
 		}
 		
+		//Add a string for the sum and create a stringBuilder with it
+		String sum = "";
+		StringBuilder stringBuilder = new StringBuilder(sum);
+		
+		return sum;
 	}
 	
 	//Adds an amount of 0 to the beginning of the string
