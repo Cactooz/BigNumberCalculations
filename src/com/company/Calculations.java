@@ -84,8 +84,8 @@ public class Calculations {
 			int char1 = Character.getNumericValue(num1.charAt(i));
 			int char2 = Character.getNumericValue(num2.charAt(i));
 			
-			//Initialize the output to 0
-			int output = 0;
+			//Initialize the output
+			int output;
 			
 			//Check if the char1 is smaller than char2 and loan from the number to the left
 			if(char1 < char2) {
