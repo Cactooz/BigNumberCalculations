@@ -1,6 +1,7 @@
 package com.company;
 
 public class Calculations {
+	//Addition for two numbers as strings
 	public static String addition(String num1, String num2) {
 		
 		//Get the length of the strings
@@ -58,6 +59,8 @@ public class Calculations {
 		return stringBuilder.toString();
 	}
 	
+	//Subtraction for two numbers as a string
+	// num1 needs to be bigger than num2
 	public static String subtraction(String num1, String num2) {
 		
 		String sum = "";
