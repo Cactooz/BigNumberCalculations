@@ -18,17 +18,27 @@ public class Calculations {
 		
 		//Add a string for the sum and create a stringBuilder with it
 		String sum = "";
+		int overflow = 0;
 		StringBuilder stringBuilder = new StringBuilder(sum);
 		
 		//Loop through all the chars of the strings from right to left and add them together
-		for (int i = length1-1; i > 0; i--) {
-			int char1 = Character.getNumericValue(num1.charAt(i));
-			int char2 = Character.getNumericValue(num2.charAt(i));
+		for (int i = length1; i > 0; i--) {
+			int char1 = Character.getNumericValue(num1.charAt(i-1));
+			int char2 = Character.getNumericValue(num2.charAt(i-1));
 			
-			stringBuilder.insert(0, (char1+char2));
+			int output = char1 + char2 + overflow;
+			if(output >= 10) {
+				output = output % 10;
+				overflow = 1;
+			}
+			else {
+				overflow = 0;
+			}
+			
+			stringBuilder.insert(0, output);
 		}
 		
-		return sum;
+		return stringBuilder.toString();
 	}
 	
 	//Adds an amount of 0 to the beginning of the string
