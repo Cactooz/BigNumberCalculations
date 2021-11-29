@@ -1,8 +1,13 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-	
+		Scanner input = new Scanner(System.in);
+		System.out.println("Skriv in två tal");
+		String number1 = input.next();
+		String number2 = input.next();
     }
 }
