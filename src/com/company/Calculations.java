@@ -22,9 +22,9 @@ public class Calculations {
 		StringBuilder stringBuilder = new StringBuilder(sum);
 		
 		//Loop through all the chars of the strings from right to left and add them together
-		for (int i = length1; i > 0; i--) {
-			int char1 = Character.getNumericValue(num1.charAt(i-1));
-			int char2 = Character.getNumericValue(num2.charAt(i-1));
+		for (int i = length1-1; i >= 0; i--) {
+			int char1 = Character.getNumericValue(num1.charAt(i));
+			int char2 = Character.getNumericValue(num2.charAt(i));
 			
 			//Add the two chars and the overflow together
 			int output = char1 + char2 + overflow;
