@@ -10,6 +10,18 @@ public class Calculations {
 		
 	}
 	
+	//Adds an amount of 0 to the beginning of the string
+	private static String expandString(String string, int amount) {
+		StringBuilder stringBuilder = new StringBuilder(string);
+		
+		//Loop through and add 0 to the beginning of the string
+		for (int i = 0; i < amount; i++) {
+			stringBuilder.insert(0, "0");
+		}
+		
+		return string;
+	}
+	
 	public static String subtraction(String num1, String num2) {
 	
 	}
