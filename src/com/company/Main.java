@@ -13,8 +13,8 @@ public class Main {
 		String sum = addition(number1, number2);
 		String difference = subtraction(number1, number2);
 		
-		System.out.println(sum);
-		System.out.println(difference);
+		print(number1, number2, sum, '+');
+		print(number1, number2, difference, '-');
     }
 	
 	//Addition for two numbers as strings
@@ -117,5 +117,27 @@ public class Main {
 			stringBuilder.insert(0, subtraction);
 		}
 		return stringBuilder.toString();
+	}
+	
+	//Shows the given numbers, the operation and the result
+	public static void print(String num1, String num2, String result, char operator)
+	{
+		//Get the length of the different strings
+		int length1 = num1.length();
+		int length2 = num2.length();
+		int resultLength  = result.length();
+		int maxLength = Math.max(Math.max (length1, length2), resultLength);
+		num1 = expandString(num1, maxLength - length1, ' ');
+		
+		num2 = expandString (num2, maxLength - length2, ' ');
+		result = expandString(result, maxLength - resultLength, ' ');
+		
+		//Print the result
+		System.out.println("  " + num1);
+		System.out.println("" + operator + " " + num2);
+		for(int i = 0; i < maxLength; i++)
+			System.out.print("―");
+		System.out.println();
+		System.out.println("  " + result + "\n");
 	}
 }
