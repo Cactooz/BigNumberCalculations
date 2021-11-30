@@ -26,11 +26,11 @@ public class Main {
 		
 		//Check if a number is shorter than the other
 		if(length1 < length2) {
-			num1 = expandString(num1, (length2-length1));
+			num1 = expandString(num1, (length2-length1), '0');
 			length1 = num1.length();
 		}
 		else if(length1 > length2) {
-			num2 = expandString(num2, (length1-length2));
+			num2 = expandString(num2, (length1-length2), '0');
 		}
 		
 		//Add a string for the sum and create a stringBuilder with it
@@ -64,12 +64,12 @@ public class Main {
 	}
 	
 	//Adds an amount of 0 to the beginning of the string
-	private static String expandString(String string, int amount) {
+	private static String expandString(String string, int amount, char character) {
 		StringBuilder stringBuilder = new StringBuilder(string);
 		
 		//Loop through and add 0 to the beginning of the string
 		for (int i = 0; i < amount; i++) {
-			stringBuilder.insert(0, "0");
+			stringBuilder.insert(0, character);
 		}
 		
 		return stringBuilder.toString();
@@ -88,11 +88,11 @@ public class Main {
 		
 		//Check if a number is shorter than the other
 		if(length1 < length2) {
-			num1 = expandString(num1, (length2-length1));
+			num1 = expandString(num1, (length2-length1), '0');
 			length1 = num1.length();
 		}
 		else if(length1 > length2) {
-			num2 = expandString(num2, (length1-length2));
+			num2 = expandString(num2, (length1-length2), '0');
 		}
 		
 		//Used if you need to load from the number to the left
