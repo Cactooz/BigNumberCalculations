@@ -103,27 +103,18 @@ public class Main {
 			int char1 = Character.getNumericValue(num1.charAt(i));
 			int char2 = Character.getNumericValue(num2.charAt(i));
 			
-			//Initialize the output
-			int output;
+			int subtraction = char1 - char2 - loan;
 			
-			//Check if the char1 is smaller than char2 and loan from the number to the left
-			if(char1 < char2) {
-				output = (10 + char1) - char2 - loan;
+			if(subtraction < 0) {
+				subtraction = subtraction + 10;
 				loan = 1;
 			}
-			//If char1 is 0 and was loaned before, reset the loan
-			else if(char1 == 0 && loan == 1) {
-				output = (10 + char1) - char2 - loan;
-				loan = 0;
-			}
-			//If not loaned before calculate the output and set loan to 0
 			else {
-				output = char1 - loan - char2;
 				loan = 0;
 			}
 			
 			//Add the output into the string
-			stringBuilder.insert(0, output);
+			stringBuilder.insert(0, subtraction);
 		}
 		return stringBuilder.toString();
 	}
