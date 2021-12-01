@@ -58,8 +58,11 @@ public class Main {
 			//Add the output into the string
 			stringBuilder.insert(0, output);
 		}
-		//Insert the overflow that's left
-		stringBuilder.insert(0, overflow);
+		
+		if(overflow > 0) {
+			//Insert the overflow that's left
+			stringBuilder.insert(0, overflow);
+		}
 		
 		//Return the string made with the stringBuilder
 		return stringBuilder.toString();
