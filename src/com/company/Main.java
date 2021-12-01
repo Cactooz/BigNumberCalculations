@@ -134,7 +134,8 @@ public class Main {
 				stringBuilder.deleteCharAt(i);
 			}
 			else {
-				i = string.length();
+				//End the loop if there isn't any 0's left
+				break;
 			}
 		}
 		
