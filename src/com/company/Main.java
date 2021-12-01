@@ -134,9 +134,9 @@ public class Main {
 		
 		//Loop through all numbers from the left until you don't find a zero
 		//or leave the last 0 as the result
-		for(int i = 0; i < string.length()-1; i++) {
-			if(string.charAt(i) == '0') {
-				stringBuilder.deleteCharAt(i);
+		while(stringBuilder.length() > 1) {
+			if(stringBuilder.charAt(0) == '0') {
+				stringBuilder.deleteCharAt(0);
 			}
 			else {
 				//End the loop if there isn't any 0's left
