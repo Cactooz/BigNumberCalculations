@@ -116,7 +116,11 @@ public class Main {
 			//Add the output into the string
 			stringBuilder.insert(0, subtraction);
 		}
-		return stringBuilder.toString();
+		
+		String output = stringBuilder.toString();
+		output = clearZeros(output);
+		
+		return output;
 	}
 	
 	//Clear zeros from the beginning of strings
