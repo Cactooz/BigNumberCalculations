@@ -119,6 +119,23 @@ public class Main {
 		return stringBuilder.toString();
 	}
 	
+	//Clear zeros from the beginning of strings
+	public static String clearZeros(String string) {
+		StringBuilder stringBuilder = new StringBuilder(string);
+		
+		//Loop through all numbers from the left until you don't find a zero
+		//or leave the last 0 as the result
+		for(int i = 0; i < string.length()-1; i++) {
+			if(string.charAt(i) == '0') {
+				stringBuilder.deleteCharAt(i);
+			}
+			else
+				i = string.length();
+		}
+		
+		return stringBuilder.toString();
+	}
+	
 	//Shows the given numbers, the operation and the result
 	public static void print(String num1, String num2, String result, char operator)
 	{
