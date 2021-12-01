@@ -133,16 +133,16 @@ public class Main {
 			if(string.charAt(i) == '0') {
 				stringBuilder.deleteCharAt(i);
 			}
-			else
+			else {
 				i = string.length();
+			}
 		}
 		
 		return stringBuilder.toString();
 	}
 	
 	//Shows the given numbers, the operation and the result
-	public static void print(String num1, String num2, String result, char operator)
-	{
+	public static void print(String num1, String num2, String result, char operator) {
 		//Get the length of the different strings
 		int length1 = num1.length();
 		int length2 = num2.length();
@@ -150,14 +150,17 @@ public class Main {
 		int maxLength = Math.max(Math.max (length1, length2), resultLength);
 		num1 = expandString(num1, maxLength - length1, ' ');
 		
-		num2 = expandString (num2, maxLength - length2, ' ');
+		num2 = expandString(num2, maxLength - length2, ' ');
 		result = expandString(result, maxLength - resultLength, ' ');
 		
 		//Print the result
 		System.out.println("  " + num1);
-		System.out.println("" + operator + " " + num2);
-		for(int i = 0; i < maxLength; i++)
+		System.out.println(operator + " " + num2);
+		
+		for(int i = 0; i < maxLength; i++) {
 			System.out.print("―");
+		}
+		
 		System.out.println();
 		System.out.println("  " + result + "\n");
 	}
