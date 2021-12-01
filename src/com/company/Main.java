@@ -39,7 +39,7 @@ public class Main {
 		StringBuilder stringBuilder = new StringBuilder(sum);
 		
 		//Loop through all the chars of the strings from right to left and add them together
-		for (int i = length1-1; i >= 0; i--) {
+		for (int i = length1 - 1; i >= 0; i--) {
 			int char1 = Character.getNumericValue(num1.charAt(i));
 			int char2 = Character.getNumericValue(num2.charAt(i));
 			
@@ -58,6 +58,8 @@ public class Main {
 			//Add the output into the string
 			stringBuilder.insert(0, output);
 		}
+		//Insert the overflow that's left
+		stringBuilder.insert(0, overflow);
 		
 		//Return the string made with the stringBuilder
 		return stringBuilder.toString();
